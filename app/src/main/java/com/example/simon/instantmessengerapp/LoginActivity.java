@@ -48,10 +48,10 @@ public class LoginActivity extends AppCompatActivity {
     /** Called when the user taps the Login button */
     public void startLogin(View view) {
         UserRestClientImpl urcl = new UserRestClientImpl();
-        if (urcl.getUserByName(username.getText().toString()) != null || true) {
+        if (urcl.getUserByName(username.getText().toString()) != null) {
             UserAuthenticator a = new UserAuthenticator();
             if (a.authenticateUser(username.getText().toString(),
-                                   password.getText().toString()) || true) {
+                                   password.getText().toString())) {
                 Intent intent = new Intent(this, GroupViewActivity.class);
                 startActivity(intent);
             } else {
